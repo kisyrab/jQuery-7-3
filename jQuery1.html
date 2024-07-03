@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Class Remove Class</title>
+
+    <script src="js/jquery-3.7.1.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    
+    <script lang="java">
+        $(function(){
+            $("div").click(function(){
+                $("div").removeClass("on")
+                $(this).addClass("on")
+            }) //div click
+            
+            $(".list li").click(function(){
+                $(".list li").removeClass("act")
+                $(this).addClass("act")
+            })
+
+            $(".box4").hover(function(){
+                $(this).addClass("bg")
+            }, function(){
+                $(this).removeClass("bg")
+            }) //hover
+
+        }) //j
+    </script>
+
+    <style>
+        body{background-color: #F1F8E8;}
+        *{margin: 0; padding: 0;}
+        div{border: 1px solid #5A72A0; margin: 100px; padding: 10px; border-radius: 50px;}
+        ul, li{list-style: none;}
+    
+        .on{background-color: #83B4FF;}
+        .act{background-color: #95D2B3; border: #55AD9B 1px solid; padding: 10px;}
+        
+        .box4{
+            width: 600px;
+            height: 400px;
+            background-image: url(img/001.jpg);           
+        }
+        
+        .bg{background-image: url(img/002.jpg);}
+
+    </style>
+
+
+</head>
+
+
+<body>
+    <h1 class="logo">LOGO</h1>
+
+    <div class="box1">box1</div>
+    <div class="box2">box2</div>
+    <div class="box3">box3</div>
+
+    <ul class="list">
+        <li>list1</li>
+        <li>list2</li>
+        <li>list3</li>
+        <li>list4</li>
+        <li>list5</li>
+    </ul>
+
+
+    <div class="box4"></div>
+
+
+
+
+
+
+
+</body>
+</html>

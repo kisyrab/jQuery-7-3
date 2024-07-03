@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>태그간의 관계 파악 : children parent(s) siblings</title>
+
+        <script src="js/jquery-3.7.1.js"></script>
+        <script src="js/jquery-ui.js"></script>
+    
+    <script lang="java">
+        $(function(){
+            $(".menu li:nth-child(3)").css({"background" : "pink"}) // 1이 시작
+
+            $(".menu").children("li").eq(4).css({"background" : "#BC5A94" , "color" : "#999" , "font-size" : "50px"}) //인덱스넘버로 0이 시작
+
+            $("li").parent(".menu").css({border:"10px solid #FFDE95"}) //parent직계부모 , parent's'는 조상
+
+            $(".list04").siblings().css({color:"#ADD899"}) //본인(.list04)은 제외 형제
+
+            $(".menu").find("div").css({"font-size" : "50px" , color : "#bc5a94"}) //find 후손까지 찾아라
+
+            $(".list1_child").parents(".menu").css({background : "#FDFFE2"})
+
+            $(".list04").prev().css({border : "5px solid #ADD899"}) //prev 프리뷰의 약축어. 앞에 나오는 tag
+            $(".list04").next().css({border : "5px solid #FFDE95"}) //next 뒤에 나오는 tag
+
+        }) //j
+    </script>
+
+
+    <style type="text/css">
+
+    </style>
+
+</head>
+    <h1>abc</h1>
+    <ul class="menu">
+        <li>list01
+            <div class="list1_child">list1_child</div>
+        </li>
+        <li>list02</li>
+        <li>list03</li>
+        <li class="list04">list04</li>
+        <li>list05</li>
+        <li>list06
+            <div class="list1_child">list6_child</div>
+        </li>
+        <li>list07</li>
+        <li>list08</li>
+    </ul>
+
+<body>
+    
+</body>
+</html>

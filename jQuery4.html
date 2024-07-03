@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>value선언으로 버튼 누를 때마다 색깔 바꾸기</title>
+    
+    <script src="js/jquery-3.7.1.js"></script>
+    <script src="js/jquery-ui.js"></script>
+
+    <script lang="java">
+        $(function(){
+            // -------------------0번 박스를 보이게 하는 여러가지 방법들
+            
+            // $(".box li:nth-child(2)").hide();
+            // $(".box li:nth-child(3)").hide();
+            // $(".box li:nth-child(4)").hide();
+            // $(".box li:nth-child(5)").hide();
+            
+            // $(".box li").hide()
+            // $(".box li:nth-child(1)").show();
+
+            // $(".box li:nth-child(1)").siblings().hide();
+            
+            // $(".box li").eq(1).hide();
+            // $(".box li").eq(2).hide();
+            // $(".box li").eq(3).hide();
+            // $(".box li").eq(4).hide();
+            
+            // $(".box li").hide();
+            // $(".box li").eq(0).show();
+            
+            $(".box li").eq(0).siblings().hide();
+            
+            // --------------------버튼 스크립트
+
+            $(".menu li").click(function(){
+                $(".menu li").removeClass("on")
+            }) // menu li click
+
+            $(".menu li").click(function(){
+                $(this).addClass("on")
+            }) // menu li click
+
+
+            // $(".menu li").eq(0).click(function(){
+            //     $(".box li").hide();
+            //     $(".box li").eq(0).show();
+            // })
+            
+            // $(".menu li").eq(1).click(function(){
+                //     $(".box li").hide();
+                //     $(".box li").eq(1).show();
+                // })
+                
+                $(".menu li").click(function(){
+                // console.log($(this).index()); //내가 선택한 li의 순서를 보여줌 0-4
+
+                // $(".box li").hide();
+                // $(".box li").eq($(this).index()).show();
+                
+                var n = $(this).index() // n값 선언
+                
+                console.log(n)
+                
+                $(".box li").hide();
+                $(".box li").eq(n).show();
+                
+                
+            }) // .menu li click
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        }) //j
+    </script>
+
+    <style>
+        *{margin: 0; padding: 0;}
+        a{text-decoration: none; color: inherit;}
+        ul, li{list-style: none;}
+        body{background-color: #F1F8E8;}
+
+        .wrap{
+            padding-top: 100px;
+            margin: 10px auto; 
+            width: 800px; height: 700px;
+            border-radius: 50px;
+            background-color: #D8EFD3;}
+
+            .menu{
+                text-align: center;
+            }
+
+            .menu li{
+                display: inline-block;
+            }
+            
+            .menu li a{
+                display: block;
+                width: 90px; height: 40px;
+                line-height: 40px;
+                background: #95D2B3;
+                color: #D8EFD3;
+                font-size: 2rem;
+                font-weight: 900;
+                border-radius: 50px;
+            }
+            
+            .box{
+                width: 500px;
+                height: 500px;
+                border: #ACD793 solid 5px;
+                border-radius: 55px;
+                margin: 50px auto;
+                position: relative;
+            }
+            .box li{
+                width: 100%;
+                border-radius: 50px;
+                color: #F1F8E8;
+                height: 100%;
+                font-size: 10rem;
+                line-height: 450px;
+                text-align: center;
+                position: absolute;
+            }
+
+            .on a{background-color: #55AD9B !important;}
+    </style>
+
+
+</head>
+<body>
+    
+    <div class="wrap">
+        <ul class="menu">
+            <li class="on"><a href="#">0</a></li>
+            <li><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+        </ul>
+        
+        <ul class="box">
+            <li style="background-color: #55AD9B;">0</li>
+            <li style="background-color: #B3E2A7;">1</li>
+            <li style="background-color: #80B9AD;">2</li>
+            <li style="background-color: #6B8A7A;">3</li>
+            <li style="background-color: #538392;">4</li>
+        </ul>
+        
+        
+        <!-- <div class="box1">0</div>
+        <div class="box2">1</div>
+        <div class="box3">2</div>
+        <div class="box4">3</div>
+        <div class="box5">4</div> -->
+
+
+        <!-- <button class="btn1">0</button>
+        <button class="btn2">1</button>
+        <button class="btn3">2</button>
+        <button class="btn4">3</button>
+        <button class="btn5">4</button> -->
+
+    </div> <!-- wrap -->
+
+</body>
+</html>
